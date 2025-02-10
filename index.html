@@ -23,6 +23,13 @@
             max-width: 700px;
             margin: auto;
             backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+            transform: scale(1);
         }
         h1 {
             color: #00ffff;
@@ -39,10 +46,32 @@
             font-size: 14px;
             color: #87cefa;
         }
+        .copyright {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #ffcc00;
+            font-style: italic;
+        }
+        .reveal-btn {
+            background: #00ffff;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 0 10px #00ffff;
+            transition: transform 0.3s ease;
+        }
+        .reveal-btn:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <button class="reveal-btn" onclick="showMessage()">Reveal Message</button>
+    <div class="container" id="message-box">
         <h1>Farewell, Biswa Sir!</h1>
         <p>Dear Biswa Sir,</p>
         <p>It is truly hard to say goodbye to a teacher who has been more than just an educator—you have been an inspiration, a mentor, and a guiding light in my journey. You were the one who introduced me to the world of coding, and for that, I will always be grateful. Your patience, wisdom, and passion for teaching have left a lasting impact on me.</p>
@@ -50,6 +79,12 @@
         <p>Wishing you all the success and happiness in this new chapter of your life!</p>
         <p><strong>With gratitude,</strong><br>Ayush Das</p>
         <div class="footer">Designed with ❤️ for the best teacher</div>
+        <div class="copyright">© 2025 Ayush Das. All rights sarcastically reserved. 😆</div>
     </div>
+    <script>
+        function showMessage() {
+            document.getElementById('message-box').classList.add('show');
+        }
+    </script>
 </body>
 </html>
